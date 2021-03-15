@@ -2,6 +2,7 @@ import React from 'react';
 import Overview from './Overview/Overview';
 import RelatedItems from './RelatedItems/RelatedItems';
 import Reviews from './reviews/Reviews';
+import Questions from './Questions/Main';
 import postInteraction from './PostInteraction';
 
 class App extends React.Component {
@@ -85,6 +86,14 @@ class App extends React.Component {
             currentProduct={this.state.currentProduct}
             productInfo={this.state.productInfo}
             getCurrentProductId={this.getCurrentProductId}
+          />
+        </div>
+        <div
+          id="questions"
+          onClick={(e) => this.props.postToApi(e, 'Related Items & Comparison')}
+        >
+          <Questions
+            currentProduct={this.state.currentProduct}
           />
         </div>
         <div
